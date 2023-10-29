@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+@media (max-width: 576px) {
+    .grid-container{
+        grid-template-columns: 
+            'navbar'
+            'selector'
+            'container'
+            'footer'
+        ;
+    }
+    .navbar{
+        grid-area: navbar;
+        background-color: rgb(139, 9, 9);
+        height: 80px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+    .enlace{
+        position: absolute;
+        padding: 20px 50px;
+        color: rgb(217, 227, 236);
+        font-family: 'lobster';
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgb(46, 0, 0);
+        top: 160px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .menu li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .menu li a{
+        font-size: 20px;
+        color: #ffff;
+    }
+    li a.active{
+        background-color: rgb(65, 1, 1);
+        padding: 8px 12px;
+        border-radius: 5px;
+    } 
+    
+    li a:hover{
+        color: rgb(201, 214, 11);
+        background-color: rgb(65, 1, 1);
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .checkbtn{
+        font-size: 30px;
+        color: #ffff;
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+    }
+    #check{
+        display: none;
+    }
+    .selector{
+        grid-area: selector;
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 4% 20%;
+        background-color: rgb(226, 214, 214);
+        position: fixed;
+        top: 80px;
+    }
+    .selector h4 {
+        font-family: 'roboto';
+        color: rgb(77, 74, 74);
+        font-size: 18px;
+    }
+    .form-select{
+        width: 100%;
+        height: 30px;
+        font-family: 'roboto';
+        border: none;
+        border-radius: 4px;
+    }
+    .container{
+        grid-area: container;
+        margin-top:  180px;
+    }
+    .cards{
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .card{
+        margin-bottom: 30px;
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 50px 10px;
+        height: 350px;
+    }
+    .card img{
+        width: 250px;
+    }
+    .text{
+        margin-top: 15px;
+        font-family: 'roboto';
+        color: rgb(0, 0, 0);
+        font-weight: 300;
+    }
+    .btn{
+        font-family: 'roboto';
+        margin-top: 20px;
+        padding: 13px 20px;
+        color: #ffff;
+        background-color: rgb(139, 9, 9);
+        border: none;
+        border-radius: 4px;
+    }
+    .footer{
+        grid-area: footer;
+        background-color: rgb(139, 9, 9);
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        padding: 10px 10px;
+        color: #ffff;
+    }
+}
+@media (min-width: 576px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-areas:
+            'navbar selector'
+            'navbar container'
+            'footer container' ;
+    }
+    .navbar{
+        grid-area: navbar;
+        display: block;
+        padding: 0;
+        height: 100vh;
+        width: 20%;
+        background-color: rgb(139, 9, 9);
+        text-align: center;
+        padding-top: 20px;
+        position: fixed;
+    }
+    .checkbtn{
+        display: none;
+    }
+    #check{
+        display: none;
+    }
+    .enlace{
+        font-family: 'lobster';
+        color: #ffff;
+        font-size: 20px;
+    }
+    .menu{
+        padding-top: 20px;
+    }
+    .menu li {
+        padding: 10px;
+    }
+    .menu li a{
+        color: rgb(217, 227, 236);
+        font-size: 14px;
+        padding: 7px 13px;
+        border-radius: 3px;
+    }
+    li a.active, li a:hover{
+        background: rgb(219, 58, 58);
+        transition: .5s;
+        } 
+    .selector{
+        grid-area: selector;
+        text-align: center;
+        width: 100%;
+        padding: 2% 10%;
+        background-color: rgb(226, 214, 214);
+        
+    }
+    .selector h4 {
+        font-family: 'roboto';
+        color: rgb(77, 74, 74);
+        font-size: 18px;
+    }
+    .form-select{
+        width: 100%;
+        height: 30px;
+        font-family: 'roboto';
+        border-radius: 4px;
+        border: none;
+    }
+    .container{
+        grid-area: container;
+        margin-top: 6px;
+        width: 100%;
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax( 200px, 1fr));
+        margin: 20px;
+        padding: 10px 20px;
+        text-align: center;
+        gap: 15px;
+        
+    }
+    .card{
+        display: block;
+        margin-bottom: 30px;
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 30px 10px;
+    }
+    .card img{
+        width: 150px;
+    }
+    .text{
+        margin-top: 15px;
+        font-family: 'roboto';
+        color: rgb(0, 0, 0);
+        font-weight: 300;
+    }
+    .btn{
+        font-family: 'roboto';
+        margin-top: 20px;
+        padding: 13px 20px;
+        color: #ffff;
+        background-color: rgb(139, 9, 9);
+        border: none;
+        border-radius: 4px;
+    }
+    .footer{
+        grid-area: footer;
+        background-color: rgb(109, 6, 6);
+        color: #ffff;
+        padding-top: 20px;
+        width: 20%;
+        height: 80px;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        
+    }
+    .footer p{
+        font-size: 11px;
+        font-family: 'roboto';
+        padding: 2px 11px;
+    }
+}        
